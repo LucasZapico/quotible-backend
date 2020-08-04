@@ -1,5 +1,5 @@
 {
-  "name": "mosh-node-api",
+  "name": "quotible-api",
   "version": "1.0.0",
   "description": "'api with node and express\"",
   "main": "app.js",
