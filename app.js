@@ -1,11 +1,12 @@
+import dotenv from 'dotenv'
 import express from 'express'
 import bodyParser from 'body-parser'
-import db from './db'
+import db from './db.js'
 import QuotesController from './quotes/QuotesController.js'
-import dotenv from 'dotenv'
 import Joi from 'joi';
 import cors from 'cors'
 
+dotenv.config()
 const opt = {debug: true}
 
 const PORT = process.env.PORT || 3001

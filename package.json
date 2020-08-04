@@ -3,25 +3,32 @@
   "version": "1.0.0",
   "description": "'api with node and express\"",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon -r dotenv/config --exec babel-node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon --exec babel-node app.js",
+    "clean": "rm -rf build",
+    "build": "babel app.js"
   },
   "author": "luc",
   "license": "ISC",
   "dependencies": {
-    "@babel/preset-env": "^7.10.4",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "joi": "^17.1.1",
-    "mongoose": "^5.9.26",
-    "nodemon": "^2.0.4"
+    "mongoose": "^5.9.26"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
-    "@babel/node": "^7.10.5"
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "14.5.0"
   }
 }

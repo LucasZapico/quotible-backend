@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
 
+
 const DB = process.env.DATABASEURL
 console.log(typeof(DB))
 mongoose.connect(DB, {
