@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "'api with node and express\"",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel app.js",
-    "dev": "nodemon --exec babel-node app.js",
-    "clean": "rm -rf build"
+    "start": "node build/app.js",
+    "dev": "webpack --mode devlopment nodemon",
+    "clean": "rm -rf build",
+    "build": "webpack --mode production"
   },
   "author": "luc",
   "license": "ISC",
@@ -22,10 +22,14 @@
     "mongoose": "^5.9.26"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
+    "@babel/core": "^7.11.0",
     "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
-    "nodemon": "^2.0.4"
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.0"
   },
   "engines": {
     "node": "14.5.0"
