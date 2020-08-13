@@ -1,5 +1,8 @@
+import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
+
+dotenv.config()
 
 
 const DB = process.env.DATABASEURL
