@@ -32,9 +32,17 @@ router.post(`/`, (req, res, next) => {
     quote: req.body.quote,
     notes: req.body.notes,
   };
-  Quote.create(newQuote)
-    .then((quote) => res.status(200).send(quote))
-    .catch((err) => next(err));
+  // check quote does not already exist 
+  Quote.exists({quote: req.body.quote}).then(result => {
+    if(result){
+      res.send('quote already exist')
+    } else {
+      Quote.create(newQuote)
+      .then((quote) => res.status(200).send(quote))
+      .catch((err) => next(err));
+    }
+  }).catch(err => next(err))
+  
 });
 
 router.put(`/:id`, (req, res, next) => {
