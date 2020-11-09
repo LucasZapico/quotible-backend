@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://quotible-backend.herokuapp.com/">
-    <img alt="Luca" src="./src/assets/images/mark.svg" width="60" />
+    <img alt="quotible" src="./quotible-mark.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
