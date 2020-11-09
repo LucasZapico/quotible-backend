@@ -27,4 +27,4 @@
 
 ## Todo
 
-- [ ] add swagger documentation
+- [ ] add swagger documentation (wip)
