@@ -7,6 +7,8 @@ import morgan from 'morgan'
 import helmet from 'helmet'
 import quotesRoutes from './routes/quotes'
 import userRoutes from './routes/users'
+import swaggerUi from 'swagger-ui-express'
+import swaggerDocument from './swagger.json'
 
 dotenv.config()
 const opt = { debug: true }
@@ -36,6 +38,13 @@ app.get('/', (req, res) => res.send('Hello World'))
 app.get('/api', (req, res) => res.send('Hello from api endpoint'))
 app.use('/api/quotes', quotesRoutes)
 app.use('/api/user', userRoutes)
+
+// swagger api docs
+app.use(
+  '/api-docs',
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument)
+)
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`)
