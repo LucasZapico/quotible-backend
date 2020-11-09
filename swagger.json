@@ -19,6 +19,51 @@
     "http"
   ],
   "paths": {
+
+    "/user/signup": {
+      "post": {
+        "tags": ["user"],
+        "summary": "Add new user",
+        "parameters": [{
+          "name": "user",
+          "in": "body", 
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": ["user"],
+        "summary": "Add new user",
+        "parameters": [{
+          "name": "user",
+          "in": "body", 
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
     "/quotes": {
       "get": {
         "tags": ["quotes"],
@@ -48,6 +93,22 @@
 
   },
   "definitions": {
+    "User": {
+      "required": [
+        "email",
+        "password"        
+      ],
+      "properties": {
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string",
+          "uniqueItems": true
+        }
+      }
+    },
     "Quote": {
       "required": [
         "_id",
