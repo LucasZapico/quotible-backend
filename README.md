@@ -32,4 +32,4 @@ The objective of this project was to enhance my development skill by building a 
 
 ## Todo
 
-- [ ] add swagger documentation
+- [ ] add swagger documentation (wip)
