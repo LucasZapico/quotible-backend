@@ -1,26 +1,24 @@
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
-
 dotenv.config()
 
+const DB = process.env.DATABASE_URL
 
-const DB = process.env.DATABASEURL
-console.log(typeof(DB))
-mongoose.connect(DB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true})
+const InitiateMongo = () => {
+  mongoose
+    .connect(DB, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     .then(client => {
       console.log(`${client} connected to database`)
-      
-      
     })
     .catch(error => console.error(error))
 
-const db = mongoose.connection;
-db.once('open', ()=> {
-  // console.log('db', db.databaseName)
-})
+  mongoose.set('useFindAndModify', false)
+  const db = mongoose.connection
+  return db
+}
 
-export default db;
-
+export default InitiateMongo
